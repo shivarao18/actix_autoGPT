@@ -1,6 +1,6 @@
 use crossterm::{
-    style::{Color, ResetColor, SetForegroundColor},
     ExecutableCommand,
+    style::{Color, ResetColor, SetForegroundColor},
 };
 use std::io::{stdin, stdout};
 
@@ -41,7 +41,7 @@ pub fn get_user_response(question: &str) -> String {
 
     // Print the question in a specific color
     stdout.execute(SetForegroundColor(Color::Blue)).unwrap();
-    println!("");
+    println!();
     println!("{}", question);
 
     // Reset Color
@@ -53,17 +53,30 @@ pub fn get_user_response(question: &str) -> String {
         .read_line(&mut user_response)
         .expect("Failed to read response");
 
-    // Trim whitespace and return
-    return user_response.trim().to_string();
+    user_response.trim().to_string()
 }
 
-// Get user response that code is safe to execute
+/// Map a confirmation line to yes, no, or "ask again".
+pub fn interpret_confirmation(input: &str) -> Option<bool> {
+    match input.trim().to_lowercase().as_str() {
+        "1" | "ok" | "y" => Some(true),
+        "2" | "no" | "n" => Some(false),
+        _ => None,
+    }
+}
+
+// Get user response that code is safe to execute.
+// AUTO_CONFIRM=1, or a replay run, skips the prompt so CI can drive the agent.
 pub fn confirm_safe_code() -> bool {
+    if crate::run_context::auto_confirm() {
+        println!("AUTO_CONFIRM is set; continuing without a manual approval prompt.");
+        return true;
+    }
     let mut stdout: std::io::Stdout = stdout();
     loop {
         // Print the question in specified color
         stdout.execute(SetForegroundColor(Color::Blue)).unwrap();
-        println!("");
+        println!();
         print!("WARNING: You are about to run code written entirely by AI. ");
         println!("Review your code and confirm you wish to continue.");
 
@@ -85,16 +98,9 @@ pub fn confirm_safe_code() -> bool {
             .read_line(&mut human_response)
             .expect("Failed to read response");
 
-        // Trim whitespace and convert to lowercase
-        let human_response: String = human_response.trim().to_lowercase();
-
-        // Match response
-        match human_response.as_str() {
-            "1" | "ok" | "y" => return true,
-            "2" | "no" | "n" => return false,
-            _ => {
-                println!("Invalid input. Please select '1' or '2'")
-            }
+        match interpret_confirmation(&human_response) {
+            Some(answer) => return answer,
+            None => println!("Invalid input. Please select '1' or '2'"),
         }
     }
 }
@@ -107,5 +113,14 @@ mod tests {
     fn tests_prints_agent_msg() {
         PrintCommand::AICall
             .print_agent_message("Managing Agent", "Testing testing, processing something");
+    }
+
+    #[test]
+    fn confirmation_accepts_the_original_answers() {
+        assert_eq!(interpret_confirmation("1"), Some(true));
+        assert_eq!(interpret_confirmation(" y "), Some(true));
+        assert_eq!(interpret_confirmation("2"), Some(false));
+        assert_eq!(interpret_confirmation("no"), Some(false));
+        assert_eq!(interpret_confirmation("maybe"), None);
     }
 }

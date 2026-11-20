@@ -1,6 +1,31 @@
+[workspace]
+resolver = "2"
+members = [".", "ai_function_macro", "web_template", "benchmarks/skeleton"]
+default-members = [".", "ai_function_macro"]
+
 [package]
 name = "actix_AUTOGPT"
 version = "0.1.0"
 edition = "2024"
+description = "Multi-agent Rust system that turns natural-language specs into Actix-web services"
+publish = false
+
+[[bin]]
+name = "actix_autogpt"
+path = "src/main.rs"
 
 [dependencies]
+ai_functions = { path = "ai_function_macro" }
+async-trait = "0.1"
+crossterm = "0.29"
+dotenv = "0.15"
+opentelemetry = "0.33"
+opentelemetry-otlp = { version = "0.33", default-features = false, features = ["http-proto", "reqwest-client", "reqwest-rustls", "trace"] }
+opentelemetry_sdk = "0.33"
+reqwest = { version = "0.13", default-features = false, features = ["json", "rustls"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["io-util", "macros", "process", "rt-multi-thread", "sync", "time"] }
+tracing = "0.1"
+tracing-opentelemetry = "0.34"
+tracing-subscriber = { version = "0.3", features = ["env-filter", "fmt"] }

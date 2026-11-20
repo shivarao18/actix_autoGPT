@@ -36,12 +36,11 @@ OPEN_AI_ORG=org-your-organization-id-here
 OPENAI_MODEL=gpt-4
 OPENAI_TEMPERATURE=0.1
 
-# Path Configuration
-# Update these paths to match your local setup
-CODE_TEMPLATE_PATH=/path/to/your/web_template/src/code_template.rs
-WEB_SERVER_PROJECT_PATH=/path/to/your/web_template/
-EXEC_MAIN_PATH=/path/to/your/web_template/src/main.rs
-API_SCHEMA_PATH=./schemas/api_schema.json
+# Path configuration. These default to the in-repo web_template.
+# CODE_TEMPLATE_PATH=web_template/src/code_template.rs
+# WEB_SERVER_PROJECT_PATH=web_template
+# EXEC_MAIN_PATH=web_template/src/main.rs
+# API_SCHEMA_PATH=schemas/api_schema.json
 
 # Agent Configuration
 MAX_BUG_FIXES=3
@@ -62,18 +61,9 @@ LOG_FORMAT=pretty  # Options: pretty, json
 5. Find your organization ID at https://platform.openai.com/account/org-settings
 6. Add it to your `.env` file
 
-### 5. Update File Paths
+### 5. Paths
 
-Open `src/helpers/general.rs` and update the hardcoded paths to match your system:
-
-```rust
-const CODE_TEMPLATE_PATH: &str = "/your/absolute/path/web_template/src/code_template.rs";
-pub const WEB_SERVER_PROJECT_PATH: &str = "/your/absolute/path/web_template/";
-const EXEC_MAIN_PATH: &str = "/your/absolute/path/web_template/src/main.rs";
-const API_SCHEMA_PATH: &str = "./schemas/api_schema.json";
-```
-
-**Note**: You'll need to have or create a `web_template` directory with a basic Actix-web project structure.
+The backend agent reads and writes `web_template` in this repo. Override that with `WEB_SERVER_PROJECT_PATH`, `CODE_TEMPLATE_PATH`, and `EXEC_MAIN_PATH` if you want a different Actix project. You do not need to edit `src/helpers/general.rs`.
 
 ### 6. Build the Project
 
@@ -89,7 +79,7 @@ This will download all dependencies and compile the project.
 cargo test
 ```
 
-**Note**: Some tests require the OpenAI API key to be set.
+`cargo test` does not call OpenAI. The live tests are ignored; run them with `cargo test -- --ignored` after exporting a key. Replay and the judge run from fixtures with no key.
 
 ### 8. Run the Application
 
@@ -122,9 +112,8 @@ Type your request, for example:
 ### Issue: "Failed to read code template"
 
 **Solution**:
-- Update paths in `src/helpers/general.rs` to absolute paths on your system
-- Ensure the `web_template` directory exists
-- Create a basic template file if missing
+- Run from the repository root so `web_template` resolves
+- Or set `WEB_SERVER_PROJECT_PATH` and `CODE_TEMPLATE_PATH` to a project that contains `src/code_template.rs`
 
 ### Issue: Compilation errors
 
@@ -312,7 +301,7 @@ If you encounter issues:
 | Variable | Required | Default | Description |
 |----------|----------|---------|-------------|
 | `OPEN_AI_KEY` | Yes | - | OpenAI API key |
-| `OPEN_AI_ORG` | Yes | - | OpenAI organization ID |
+| `OPEN_AI_ORG` | No | - | OpenAI organization ID. Sent only when set. |
 | `OPENAI_MODEL` | No | `gpt-4` | Model to use |
 | `OPENAI_TEMPERATURE` | No | `0.1` | Response creativity (0-2) |
 | `RUST_LOG` | No | `info` | Log level |

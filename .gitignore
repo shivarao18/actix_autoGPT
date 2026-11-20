@@ -1,4 +1,6 @@
-/target
+target/
+**/.env
+!.env.example
 
 IMPROVEMENTS.md
 PROJECT_SUMMARY.md

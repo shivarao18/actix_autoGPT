@@ -28,14 +28,13 @@ pub struct FactSheet {
     pub api_endpoint_schema: Option<Vec<RouteObject>>,
 }
 
+pub type AgentError = Box<dyn std::error::Error + Send + Sync>;
+
 #[async_trait]
 pub trait SpecialFunctions: Debug {
-    // Used to that manager can get attributes from Agents
+    // Used so the manager can read attributes from an agent.
     fn get_attributes_from_agent(&self) -> &BasicAgent;
 
-    // This function will allow agents to execute their logic
-    async fn execute(
-        &mut self,
-        factsheet: &mut FactSheet,
-    ) -> Result<(), Box<dyn std::error::Error>>;
+    // This function will allow agents to execute their logic.
+    async fn execute(&mut self, factsheet: &mut FactSheet) -> Result<(), AgentError>;
 }

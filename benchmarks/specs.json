@@ -1,0 +1,201 @@
+{
+  "specs": [
+    {
+      "id": "todo-api",
+      "request": "I need a simple TODO app with CRUD for tasks.",
+      "expected_goal_contains": "todo",
+      "expected_scope": {
+        "is_crud_required": true,
+        "is_user_login_and_logout": false,
+        "is_external_urls_required": false
+      },
+      "expected_routes": [
+        "/health",
+        "/todos"
+      ],
+      "expected_tools": [
+        "convert_user_input_to_goal",
+        "print_project_scope",
+        "print_backend_webserver_code",
+        "print_improved_webserver_code",
+        "print_rest_api_endpoints",
+        "cargo_build",
+        "runtime_smoke",
+        "endpoint_test"
+      ]
+    },
+    {
+      "id": "weather-api",
+      "request": "Build a REST API that stores weather readings with a date, temperature, and description.",
+      "expected_goal_contains": "weather",
+      "expected_scope": {
+        "is_crud_required": true,
+        "is_user_login_and_logout": false,
+        "is_external_urls_required": false
+      },
+      "expected_routes": [
+        "/health",
+        "/weather"
+      ],
+      "expected_tools": [
+        "convert_user_input_to_goal",
+        "print_project_scope",
+        "print_backend_webserver_code",
+        "print_improved_webserver_code",
+        "print_rest_api_endpoints",
+        "cargo_build",
+        "runtime_smoke",
+        "endpoint_test"
+      ]
+    },
+    {
+      "id": "notes-api",
+      "request": "Build a notes API with user login and logout and CRUD for notes.",
+      "expected_goal_contains": "note",
+      "expected_scope": {
+        "is_crud_required": true,
+        "is_user_login_and_logout": true,
+        "is_external_urls_required": false
+      },
+      "expected_routes": [
+        "/health",
+        "/notes"
+      ],
+      "expected_tools": [
+        "convert_user_input_to_goal",
+        "print_project_scope",
+        "print_backend_webserver_code",
+        "print_improved_webserver_code",
+        "print_rest_api_endpoints",
+        "cargo_build",
+        "runtime_smoke",
+        "endpoint_test"
+      ]
+    },
+    {
+      "id": "forex-prices",
+      "request": "Build a site that shows the latest forex prices from a public exchange.",
+      "expected_goal_contains": "forex",
+      "expected_scope": {
+        "is_crud_required": false,
+        "is_user_login_and_logout": false,
+        "is_external_urls_required": true
+      },
+      "expected_routes": [
+        "/health",
+        "/prices"
+      ],
+      "expected_tools": [
+        "convert_user_input_to_goal",
+        "print_project_scope",
+        "print_site_urls",
+        "check_status_code",
+        "print_backend_webserver_code",
+        "print_improved_webserver_code",
+        "print_rest_api_endpoints",
+        "cargo_build",
+        "runtime_smoke",
+        "endpoint_test"
+      ]
+    },
+    {
+      "id": "fitness-tracker",
+      "request": "Need a full stack app that fetches and tracks my fitness progress, including timezone info from the web, and users can log in.",
+      "expected_goal_contains": "fitness",
+      "expected_scope": {
+        "is_crud_required": true,
+        "is_user_login_and_logout": true,
+        "is_external_urls_required": true
+      },
+      "expected_routes": [
+        "/health",
+        "/progress"
+      ],
+      "expected_tools": [
+        "convert_user_input_to_goal",
+        "print_project_scope",
+        "print_site_urls",
+        "check_status_code",
+        "print_backend_webserver_code",
+        "print_improved_webserver_code",
+        "print_rest_api_endpoints",
+        "cargo_build",
+        "runtime_smoke",
+        "endpoint_test"
+      ]
+    },
+    {
+      "id": "health-dashboard",
+      "request": "Build a health dashboard API that stores stats such as heart rate.",
+      "expected_goal_contains": "health",
+      "expected_scope": {
+        "is_crud_required": true,
+        "is_user_login_and_logout": false,
+        "is_external_urls_required": false
+      },
+      "expected_routes": [
+        "/health",
+        "/stats"
+      ],
+      "expected_tools": [
+        "convert_user_input_to_goal",
+        "print_project_scope",
+        "print_backend_webserver_code",
+        "print_improved_webserver_code",
+        "print_rest_api_endpoints",
+        "cargo_build",
+        "runtime_smoke",
+        "endpoint_test"
+      ]
+    },
+    {
+      "id": "inventory-api",
+      "request": "Build an inventory API with CRUD for stock items.",
+      "expected_goal_contains": "inventory",
+      "expected_scope": {
+        "is_crud_required": true,
+        "is_user_login_and_logout": false,
+        "is_external_urls_required": false
+      },
+      "expected_routes": [
+        "/health",
+        "/items"
+      ],
+      "expected_tools": [
+        "convert_user_input_to_goal",
+        "print_project_scope",
+        "print_backend_webserver_code",
+        "print_improved_webserver_code",
+        "print_rest_api_endpoints",
+        "cargo_build",
+        "runtime_smoke",
+        "endpoint_test"
+      ]
+    },
+    {
+      "id": "bookmarks-api",
+      "request": "Build a bookmarks API that stores URLs and titles.",
+      "expected_goal_contains": "bookmark",
+      "expected_scope": {
+        "is_crud_required": true,
+        "is_user_login_and_logout": false,
+        "is_external_urls_required": false
+      },
+      "expected_routes": [
+        "/health",
+        "/bookmarks"
+      ],
+      "expected_tools": [
+        "convert_user_input_to_goal",
+        "print_project_scope",
+        "print_backend_webserver_code",
+        "print_improved_webserver_code",
+        "print_fixed_code",
+        "print_rest_api_endpoints",
+        "cargo_build",
+        "runtime_smoke",
+        "endpoint_test"
+      ]
+    }
+  ]
+}

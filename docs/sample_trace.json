@@ -1,0 +1,3490 @@
+[
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Project Manager\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"convert_user_input_to_goal\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(32884)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(22589)"
+      }
+    ],
+    "end_time": 1795137187090738,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "72982a44b04daa0e",
+    "span_id": "75265280ef1f03f2",
+    "start_time": 1795137187090684,
+    "status": "Unset",
+    "trace_id": "a1f43e64f4218f66af515e9c97ab5cc2"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Solutions Architect\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"print_project_scope\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(16248)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(10704)"
+      }
+    ],
+    "end_time": 1795137187090908,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "065ad46318e88b47",
+    "span_id": "95aeb1b63af16fe9",
+    "start_time": 1795137187090883,
+    "status": "Unset",
+    "trace_id": "a1f43e64f4218f66af515e9c97ab5cc2"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents/agent_architect.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_architect\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(159)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_architect\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Solutions Architect\"))"
+      },
+      {
+        "key": "state",
+        "value": "String(Owned(\"Discovery\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(98246)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(6734)"
+      }
+    ],
+    "end_time": 1795137187090961,
+    "kind": "Internal",
+    "name": "agent.state",
+    "parent_span_id": "8a8eaee0e65ca243",
+    "span_id": "065ad46318e88b47",
+    "start_time": 1795137187090857,
+    "status": "Unset",
+    "trace_id": "a1f43e64f4218f66af515e9c97ab5cc2"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents_manager/managing_agent.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents_manager::managing_agent\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(67)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents_manager::managing_agent\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Solutions Architect\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(143123)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(10652)"
+      }
+    ],
+    "end_time": 1795137187090993,
+    "kind": "Internal",
+    "name": "agent.step",
+    "parent_span_id": "72982a44b04daa0e",
+    "span_id": "8a8eaee0e65ca243",
+    "start_time": 1795137187090841,
+    "status": "Unset",
+    "trace_id": "a1f43e64f4218f66af515e9c97ab5cc2"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"print_backend_webserver_code\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(16699)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(7363)"
+      }
+    ],
+    "end_time": 1795137187091106,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "0f6dc64a9ed1f317",
+    "span_id": "5235681dcf9454ed",
+    "start_time": 1795137187091083,
+    "status": "Unset",
+    "trace_id": "a1f43e64f4218f66af515e9c97ab5cc2"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents/agent_backend.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(271)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "state",
+        "value": "String(Owned(\"Discovery\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(176069)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(7478)"
+      }
+    ],
+    "end_time": 1795137187091240,
+    "kind": "Internal",
+    "name": "agent.state",
+    "parent_span_id": "382ad2a5b02beda1",
+    "span_id": "0f6dc64a9ed1f317",
+    "start_time": 1795137187091057,
+    "status": "Unset",
+    "trace_id": "a1f43e64f4218f66af515e9c97ab5cc2"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"print_improved_webserver_code\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(19113)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(12577)"
+      }
+    ],
+    "end_time": 1795137187091385,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "42ac0bc672dbcb14",
+    "span_id": "6bda877a43ef7338",
+    "start_time": 1795137187091355,
+    "status": "Unset",
+    "trace_id": "a1f43e64f4218f66af515e9c97ab5cc2"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents/agent_backend.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(286)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "state",
+        "value": "String(Owned(\"Working\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(216485)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(13870)"
+      }
+    ],
+    "end_time": 1795137187091534,
+    "kind": "Internal",
+    "name": "agent.state",
+    "parent_span_id": "382ad2a5b02beda1",
+    "span_id": "42ac0bc672dbcb14",
+    "start_time": 1795137187091305,
+    "status": "Unset",
+    "trace_id": "a1f43e64f4218f66af515e9c97ab5cc2"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/verification.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(69)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"cargo_build\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(98734)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(192472648)"
+      }
+    ],
+    "end_time": 1795137187284183,
+    "kind": "Internal",
+    "name": "tool.call",
+    "parent_span_id": "00718a237b8d4058",
+    "span_id": "10d147b3f7b1fe45",
+    "start_time": 1795137187091613,
+    "status": "Unset",
+    "trace_id": "a1f43e64f4218f66af515e9c97ab5cc2"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"print_rest_api_endpoints\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(28877)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(34205)"
+      }
+    ],
+    "end_time": 1795137187284497,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "00718a237b8d4058",
+    "span_id": "7b5afbe7f52bc813",
+    "start_time": 1795137187284439,
+    "status": "Unset",
+    "trace_id": "a1f43e64f4218f66af515e9c97ab5cc2"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/verification.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(256)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"endpoint_test\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "route",
+        "value": "String(Owned(\"/health\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(1413400)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(38531)"
+      }
+    ],
+    "end_time": 1795137187312608,
+    "kind": "Internal",
+    "name": "tool.call",
+    "parent_span_id": "4e92fa0e3241ed65",
+    "span_id": "6b69077fde738803",
+    "start_time": 1795137187311163,
+    "status": "Unset",
+    "trace_id": "a1f43e64f4218f66af515e9c97ab5cc2"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/verification.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(256)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"endpoint_test\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "route",
+        "value": "String(Owned(\"/todos\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(1438884)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(19006)"
+      }
+    ],
+    "end_time": 1795137187314170,
+    "kind": "Internal",
+    "name": "tool.call",
+    "parent_span_id": "4e92fa0e3241ed65",
+    "span_id": "8fb0c6247168d3c2",
+    "start_time": 1795137187312715,
+    "status": "Unset",
+    "trace_id": "a1f43e64f4218f66af515e9c97ab5cc2"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/verification.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(161)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"runtime_smoke\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(27213877)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(2603461)"
+      }
+    ],
+    "end_time": 1795137187314417,
+    "kind": "Internal",
+    "name": "tool.call",
+    "parent_span_id": "00718a237b8d4058",
+    "span_id": "4e92fa0e3241ed65",
+    "start_time": 1795137187284601,
+    "status": "Unset",
+    "trace_id": "a1f43e64f4218f66af515e9c97ab5cc2"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents/agent_backend.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(305)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "state",
+        "value": "String(Owned(\"UnitTesting\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(27924828)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(195035784)"
+      }
+    ],
+    "end_time": 1795137187314549,
+    "kind": "Internal",
+    "name": "agent.state",
+    "parent_span_id": "382ad2a5b02beda1",
+    "span_id": "00718a237b8d4058",
+    "start_time": 1795137187091590,
+    "status": "Unset",
+    "trace_id": "a1f43e64f4218f66af515e9c97ab5cc2"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents_manager/managing_agent.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents_manager::managing_agent\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(67)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents_manager::managing_agent\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(28541646)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(195004548)"
+      }
+    ],
+    "end_time": 1795137187314587,
+    "kind": "Internal",
+    "name": "agent.step",
+    "parent_span_id": "72982a44b04daa0e",
+    "span_id": "382ad2a5b02beda1",
+    "start_time": 1795137187091042,
+    "status": "Unset",
+    "trace_id": "a1f43e64f4218f66af515e9c97ab5cc2"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/replay.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::replay\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(103)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::replay\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Project Manager\"))"
+      },
+      {
+        "key": "spec_id",
+        "value": "String(Owned(\"todo-api\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(29018876)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(195021290)"
+      }
+    ],
+    "end_time": 1795137187314625,
+    "kind": "Internal",
+    "name": "agent.run",
+    "parent_span_id": "0000000000000000",
+    "span_id": "72982a44b04daa0e",
+    "start_time": 1795137187090593,
+    "status": "Unset",
+    "trace_id": "a1f43e64f4218f66af515e9c97ab5cc2"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Project Manager\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"convert_user_input_to_goal\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(24872)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(9149)"
+      }
+    ],
+    "end_time": 1795137187316953,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "428d88fae1d52b9b",
+    "span_id": "027dae94c06c2d50",
+    "start_time": 1795137187316920,
+    "status": "Unset",
+    "trace_id": "648e5b0451986e207dd66c7fdaf83d07"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Solutions Architect\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"print_project_scope\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(16276)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(6131)"
+      }
+    ],
+    "end_time": 1795137187317069,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "af6dfd39d9c85159",
+    "span_id": "82ffc8ff34699ff7",
+    "start_time": 1795137187317047,
+    "status": "Unset",
+    "trace_id": "648e5b0451986e207dd66c7fdaf83d07"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents/agent_architect.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_architect\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(159)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_architect\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Solutions Architect\"))"
+      },
+      {
+        "key": "state",
+        "value": "String(Owned(\"Discovery\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(76545)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(5955)"
+      }
+    ],
+    "end_time": 1795137187317113,
+    "kind": "Internal",
+    "name": "agent.state",
+    "parent_span_id": "92e20ea7fc0081f2",
+    "span_id": "af6dfd39d9c85159",
+    "start_time": 1795137187317031,
+    "status": "Unset",
+    "trace_id": "648e5b0451986e207dd66c7fdaf83d07"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Solutions Architect\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"print_site_urls\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(15019)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(6617)"
+      }
+    ],
+    "end_time": 1795137187317174,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "92e20ea7fc0081f2",
+    "span_id": "c998b566f1419641",
+    "start_time": 1795137187317153,
+    "status": "Unset",
+    "trace_id": "648e5b0451986e207dd66c7fdaf83d07"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents/agent_architect.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_architect\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(88)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_architect\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Solutions Architect\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"check_status_code\"))"
+      },
+      {
+        "key": "url",
+        "value": "String(Owned(\"https://example.com/todos\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(2461)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(5848)"
+      }
+    ],
+    "end_time": 1795137187317241,
+    "kind": "Internal",
+    "name": "tool.call",
+    "parent_span_id": "a16832f1b867e593",
+    "span_id": "d0d9a337fc6a42f2",
+    "start_time": 1795137187317234,
+    "status": "Unset",
+    "trace_id": "648e5b0451986e207dd66c7fdaf83d07"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents/agent_architect.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_architect\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(178)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_architect\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Solutions Architect\"))"
+      },
+      {
+        "key": "state",
+        "value": "String(Owned(\"UnitTesting\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(55383)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(6410)"
+      }
+    ],
+    "end_time": 1795137187317278,
+    "kind": "Internal",
+    "name": "agent.state",
+    "parent_span_id": "92e20ea7fc0081f2",
+    "span_id": "a16832f1b867e593",
+    "start_time": 1795137187317218,
+    "status": "Unset",
+    "trace_id": "648e5b0451986e207dd66c7fdaf83d07"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents_manager/managing_agent.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents_manager::managing_agent\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(67)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents_manager::managing_agent\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Solutions Architect\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(283003)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(6600)"
+      }
+    ],
+    "end_time": 1795137187317309,
+    "kind": "Internal",
+    "name": "agent.step",
+    "parent_span_id": "428d88fae1d52b9b",
+    "span_id": "92e20ea7fc0081f2",
+    "start_time": 1795137187317020,
+    "status": "Unset",
+    "trace_id": "648e5b0451986e207dd66c7fdaf83d07"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"print_backend_webserver_code\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(9005)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(6480)"
+      }
+    ],
+    "end_time": 1795137187317387,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "55f1ce9d6b520ad9",
+    "span_id": "10c3c5af1882df48",
+    "start_time": 1795137187317372,
+    "status": "Unset",
+    "trace_id": "648e5b0451986e207dd66c7fdaf83d07"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents/agent_backend.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(271)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "state",
+        "value": "String(Owned(\"Discovery\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(128031)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(6520)"
+      }
+    ],
+    "end_time": 1795137187317483,
+    "kind": "Internal",
+    "name": "agent.state",
+    "parent_span_id": "fb78e7a24e49155c",
+    "span_id": "55f1ce9d6b520ad9",
+    "start_time": 1795137187317349,
+    "status": "Unset",
+    "trace_id": "648e5b0451986e207dd66c7fdaf83d07"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"print_improved_webserver_code\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(7854)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(6387)"
+      }
+    ],
+    "end_time": 1795137187317575,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "616b82341c626e0b",
+    "span_id": "e6c2cab023bf745f",
+    "start_time": 1795137187317561,
+    "status": "Unset",
+    "trace_id": "648e5b0451986e207dd66c7fdaf83d07"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents/agent_backend.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(286)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "state",
+        "value": "String(Owned(\"Working\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(579917)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(11362)"
+      }
+    ],
+    "end_time": 1795137187318119,
+    "kind": "Internal",
+    "name": "agent.state",
+    "parent_span_id": "fb78e7a24e49155c",
+    "span_id": "616b82341c626e0b",
+    "start_time": 1795137187317529,
+    "status": "Unset",
+    "trace_id": "648e5b0451986e207dd66c7fdaf83d07"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/verification.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(69)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"cargo_build\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(59668)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(172214579)"
+      }
+    ],
+    "end_time": 1795137187490460,
+    "kind": "Internal",
+    "name": "tool.call",
+    "parent_span_id": "4a33f9d60ea8418b",
+    "span_id": "6056b1350cbf6090",
+    "start_time": 1795137187318187,
+    "status": "Unset",
+    "trace_id": "648e5b0451986e207dd66c7fdaf83d07"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"print_rest_api_endpoints\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(31158)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(37309)"
+      }
+    ],
+    "end_time": 1795137187490778,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "4a33f9d60ea8418b",
+    "span_id": "84d96a3370d7844f",
+    "start_time": 1795137187490714,
+    "status": "Unset",
+    "trace_id": "648e5b0451986e207dd66c7fdaf83d07"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/verification.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(256)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"endpoint_test\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "route",
+        "value": "String(Owned(\"/health\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(1396816)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(44248)"
+      }
+    ],
+    "end_time": 1795137187517558,
+    "kind": "Internal",
+    "name": "tool.call",
+    "parent_span_id": "c6f8fff9f87daac7",
+    "span_id": "3e1d8f8931342149",
+    "start_time": 1795137187516124,
+    "status": "Unset",
+    "trace_id": "648e5b0451986e207dd66c7fdaf83d07"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/verification.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(256)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"endpoint_test\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "route",
+        "value": "String(Owned(\"/todos\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(580999)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(20119)"
+      }
+    ],
+    "end_time": 1795137187518273,
+    "kind": "Internal",
+    "name": "tool.call",
+    "parent_span_id": "c6f8fff9f87daac7",
+    "span_id": "c6d954c971b8564c",
+    "start_time": 1795137187517675,
+    "status": "Unset",
+    "trace_id": "648e5b0451986e207dd66c7fdaf83d07"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/verification.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(161)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"runtime_smoke\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(25477336)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(2154104)"
+      }
+    ],
+    "end_time": 1795137187518505,
+    "kind": "Internal",
+    "name": "tool.call",
+    "parent_span_id": "4a33f9d60ea8418b",
+    "span_id": "c6f8fff9f87daac7",
+    "start_time": 1795137187490875,
+    "status": "Unset",
+    "trace_id": "648e5b0451986e207dd66c7fdaf83d07"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents/agent_backend.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(305)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "state",
+        "value": "String(Owned(\"UnitTesting\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(26141107)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(174329705)"
+      }
+    ],
+    "end_time": 1795137187518634,
+    "kind": "Internal",
+    "name": "agent.state",
+    "parent_span_id": "fb78e7a24e49155c",
+    "span_id": "4a33f9d60ea8418b",
+    "start_time": 1795137187318165,
+    "status": "Unset",
+    "trace_id": "648e5b0451986e207dd66c7fdaf83d07"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents_manager/managing_agent.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents_manager::managing_agent\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(67)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents_manager::managing_agent\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(27032426)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(174299070)"
+      }
+    ],
+    "end_time": 1795137187518670,
+    "kind": "Internal",
+    "name": "agent.step",
+    "parent_span_id": "428d88fae1d52b9b",
+    "span_id": "fb78e7a24e49155c",
+    "start_time": 1795137187317339,
+    "status": "Unset",
+    "trace_id": "648e5b0451986e207dd66c7fdaf83d07"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/replay.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::replay\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(103)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::replay\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Project Manager\"))"
+      },
+      {
+        "key": "spec_id",
+        "value": "String(Owned(\"todo-api\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(27542977)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(174288336)"
+      }
+    ],
+    "end_time": 1795137187518706,
+    "kind": "Internal",
+    "name": "agent.run",
+    "parent_span_id": "0000000000000000",
+    "span_id": "428d88fae1d52b9b",
+    "start_time": 1795137187316878,
+    "status": "Unset",
+    "trace_id": "648e5b0451986e207dd66c7fdaf83d07"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Project Manager\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"convert_user_input_to_goal\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(22879)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(8203)"
+      }
+    ],
+    "end_time": 1795137187521077,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "55f99a36ea5c8d24",
+    "span_id": "d13acf5b63448a95",
+    "start_time": 1795137187521047,
+    "status": "Unset",
+    "trace_id": "47661c720ac50458726752bce6b82dc9"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Solutions Architect\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"print_project_scope\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(13163)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(5201)"
+      }
+    ],
+    "end_time": 1795137187521178,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "0b7f6e09e6319d65",
+    "span_id": "f1722e1035a5593b",
+    "start_time": 1795137187521160,
+    "status": "Unset",
+    "trace_id": "47661c720ac50458726752bce6b82dc9"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents/agent_architect.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_architect\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(159)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_architect\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Solutions Architect\"))"
+      },
+      {
+        "key": "state",
+        "value": "String(Owned(\"Discovery\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(68216)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(4846)"
+      }
+    ],
+    "end_time": 1795137187521219,
+    "kind": "Internal",
+    "name": "agent.state",
+    "parent_span_id": "318716002828d7fa",
+    "span_id": "0b7f6e09e6319d65",
+    "start_time": 1795137187521146,
+    "status": "Unset",
+    "trace_id": "47661c720ac50458726752bce6b82dc9"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents_manager/managing_agent.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents_manager::managing_agent\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(67)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents_manager::managing_agent\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Solutions Architect\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(103290)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(6142)"
+      }
+    ],
+    "end_time": 1795137187521245,
+    "kind": "Internal",
+    "name": "agent.step",
+    "parent_span_id": "55f99a36ea5c8d24",
+    "span_id": "318716002828d7fa",
+    "start_time": 1795137187521136,
+    "status": "Unset",
+    "trace_id": "47661c720ac50458726752bce6b82dc9"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"print_backend_webserver_code\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(7626)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(5450)"
+      }
+    ],
+    "end_time": 1795137187521312,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "beaae7f343da38ab",
+    "span_id": "82211ffe659bf924",
+    "start_time": 1795137187521299,
+    "status": "Unset",
+    "trace_id": "47661c720ac50458726752bce6b82dc9"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents/agent_backend.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(271)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "state",
+        "value": "String(Owned(\"Discovery\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(111541)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(6065)"
+      }
+    ],
+    "end_time": 1795137187521396,
+    "kind": "Internal",
+    "name": "agent.state",
+    "parent_span_id": "2b727b27ca3cb12c",
+    "span_id": "beaae7f343da38ab",
+    "start_time": 1795137187521279,
+    "status": "Unset",
+    "trace_id": "47661c720ac50458726752bce6b82dc9"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"print_improved_webserver_code\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(7422)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(6196)"
+      }
+    ],
+    "end_time": 1795137187521477,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "5ee6725c4b7fe453",
+    "span_id": "02686a8774caf369",
+    "start_time": 1795137187521464,
+    "status": "Unset",
+    "trace_id": "47661c720ac50458726752bce6b82dc9"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents/agent_backend.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(286)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "state",
+        "value": "String(Owned(\"Working\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(509673)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(10346)"
+      }
+    ],
+    "end_time": 1795137187521955,
+    "kind": "Internal",
+    "name": "agent.state",
+    "parent_span_id": "2b727b27ca3cb12c",
+    "span_id": "5ee6725c4b7fe453",
+    "start_time": 1795137187521436,
+    "status": "Unset",
+    "trace_id": "47661c720ac50458726752bce6b82dc9"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/verification.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(69)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"cargo_build\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(59763)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(173893748)"
+      }
+    ],
+    "end_time": 1795137187695969,
+    "kind": "Internal",
+    "name": "tool.call",
+    "parent_span_id": "590145a03d0d23b6",
+    "span_id": "6d2fdc885d25dc77",
+    "start_time": 1795137187522016,
+    "status": "Unset",
+    "trace_id": "47661c720ac50458726752bce6b82dc9"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"print_rest_api_endpoints\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(31398)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(33184)"
+      }
+    ],
+    "end_time": 1795137187696288,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "590145a03d0d23b6",
+    "span_id": "adc66ae4e563a87e",
+    "start_time": 1795137187696228,
+    "status": "Unset",
+    "trace_id": "47661c720ac50458726752bce6b82dc9"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/verification.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(256)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"endpoint_test\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "route",
+        "value": "String(Owned(\"/health\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(888870)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(38789)"
+      }
+    ],
+    "end_time": 1795137187722847,
+    "kind": "Internal",
+    "name": "tool.call",
+    "parent_span_id": "ab096271ccc5bb97",
+    "span_id": "0597550804a1e987",
+    "start_time": 1795137187721926,
+    "status": "Unset",
+    "trace_id": "47661c720ac50458726752bce6b82dc9"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/verification.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(256)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"endpoint_test\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "route",
+        "value": "String(Owned(\"/todos\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(1091617)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(17678)"
+      }
+    ],
+    "end_time": 1795137187724057,
+    "kind": "Internal",
+    "name": "tool.call",
+    "parent_span_id": "ab096271ccc5bb97",
+    "span_id": "ca89a721c99b6a91",
+    "start_time": 1795137187722954,
+    "status": "Unset",
+    "trace_id": "47661c720ac50458726752bce6b82dc9"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/verification.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(161)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"runtime_smoke\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(26418643)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(1677599)"
+      }
+    ],
+    "end_time": 1795137187724470,
+    "kind": "Internal",
+    "name": "tool.call",
+    "parent_span_id": "590145a03d0d23b6",
+    "span_id": "ab096271ccc5bb97",
+    "start_time": 1795137187696375,
+    "status": "Unset",
+    "trace_id": "47661c720ac50458726752bce6b82dc9"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents/agent_backend.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(305)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "state",
+        "value": "String(Owned(\"UnitTesting\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(27080766)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(175531778)"
+      }
+    ],
+    "end_time": 1795137187724607,
+    "kind": "Internal",
+    "name": "agent.state",
+    "parent_span_id": "2b727b27ca3cb12c",
+    "span_id": "590145a03d0d23b6",
+    "start_time": 1795137187521996,
+    "status": "Unset",
+    "trace_id": "47661c720ac50458726752bce6b82dc9"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents_manager/managing_agent.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents_manager::managing_agent\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(67)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents_manager::managing_agent\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(27875248)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(175499142)"
+      }
+    ],
+    "end_time": 1795137187724644,
+    "kind": "Internal",
+    "name": "agent.step",
+    "parent_span_id": "55f99a36ea5c8d24",
+    "span_id": "2b727b27ca3cb12c",
+    "start_time": 1795137187521270,
+    "status": "Unset",
+    "trace_id": "47661c720ac50458726752bce6b82dc9"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/replay.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::replay\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(103)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::replay\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Project Manager\"))"
+      },
+      {
+        "key": "spec_id",
+        "value": "String(Owned(\"todo-api\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(28193497)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(175484987)"
+      }
+    ],
+    "end_time": 1795137187724683,
+    "kind": "Internal",
+    "name": "agent.run",
+    "parent_span_id": "0000000000000000",
+    "span_id": "55f99a36ea5c8d24",
+    "start_time": 1795137187521008,
+    "status": "Unset",
+    "trace_id": "47661c720ac50458726752bce6b82dc9"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Project Manager\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"convert_user_input_to_goal\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(26664)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(11199)"
+      }
+    ],
+    "end_time": 1795137187727009,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "a1dfd252fb7a5b3e",
+    "span_id": "af2d18ec142704b4",
+    "start_time": 1795137187726972,
+    "status": "Unset",
+    "trace_id": "60252b629af2232b4c223b21e5f25311"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Solutions Architect\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"print_project_scope\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(16543)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(6489)"
+      }
+    ],
+    "end_time": 1795137187727127,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "1cd59df400cdaebc",
+    "span_id": "06455bf58815c0cd",
+    "start_time": 1795137187727104,
+    "status": "Unset",
+    "trace_id": "60252b629af2232b4c223b21e5f25311"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents/agent_architect.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_architect\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(159)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_architect\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Solutions Architect\"))"
+      },
+      {
+        "key": "state",
+        "value": "String(Owned(\"Discovery\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(79006)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(7509)"
+      }
+    ],
+    "end_time": 1795137187727173,
+    "kind": "Internal",
+    "name": "agent.state",
+    "parent_span_id": "8fd886ff3963a2d0",
+    "span_id": "1cd59df400cdaebc",
+    "start_time": 1795137187727088,
+    "status": "Unset",
+    "trace_id": "60252b629af2232b4c223b21e5f25311"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents_manager/managing_agent.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents_manager::managing_agent\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(67)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents_manager::managing_agent\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Solutions Architect\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(122044)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(8554)"
+      }
+    ],
+    "end_time": 1795137187727204,
+    "kind": "Internal",
+    "name": "agent.step",
+    "parent_span_id": "a1dfd252fb7a5b3e",
+    "span_id": "8fd886ff3963a2d0",
+    "start_time": 1795137187727075,
+    "status": "Unset",
+    "trace_id": "60252b629af2232b4c223b21e5f25311"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"print_backend_webserver_code\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(11160)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(7122)"
+      }
+    ],
+    "end_time": 1795137187727322,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "63ec0dc7b798932e",
+    "span_id": "4d77c809642d66f6",
+    "start_time": 1795137187727304,
+    "status": "Unset",
+    "trace_id": "60252b629af2232b4c223b21e5f25311"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents/agent_backend.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(271)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "state",
+        "value": "String(Owned(\"Discovery\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(137888)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(7357)"
+      }
+    ],
+    "end_time": 1795137187727420,
+    "kind": "Internal",
+    "name": "agent.state",
+    "parent_span_id": "4cee4f4f63afb2ca",
+    "span_id": "63ec0dc7b798932e",
+    "start_time": 1795137187727276,
+    "status": "Unset",
+    "trace_id": "60252b629af2232b4c223b21e5f25311"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"print_improved_webserver_code\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(12013)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(11272)"
+      }
+    ],
+    "end_time": 1795137187727535,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "313cd49a0e6f46c6",
+    "span_id": "11e49fb417ecfcd4",
+    "start_time": 1795137187727514,
+    "status": "Unset",
+    "trace_id": "60252b629af2232b4c223b21e5f25311"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents/agent_backend.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(286)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "state",
+        "value": "String(Owned(\"Working\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(258182)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(15157)"
+      }
+    ],
+    "end_time": 1795137187727742,
+    "kind": "Internal",
+    "name": "agent.state",
+    "parent_span_id": "4cee4f4f63afb2ca",
+    "span_id": "313cd49a0e6f46c6",
+    "start_time": 1795137187727471,
+    "status": "Unset",
+    "trace_id": "60252b629af2232b4c223b21e5f25311"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/verification.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(69)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"cargo_build\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(57805)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(174689919)"
+      }
+    ],
+    "end_time": 1795137187902552,
+    "kind": "Internal",
+    "name": "tool.call",
+    "parent_span_id": "67a72f6223268a74",
+    "span_id": "f60ab6a23546988b",
+    "start_time": 1795137187727805,
+    "status": "Unset",
+    "trace_id": "60252b629af2232b4c223b21e5f25311"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/helpers/general.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(105)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::helpers::general\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"print_rest_api_endpoints\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(29476)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(33844)"
+      }
+    ],
+    "end_time": 1795137187902845,
+    "kind": "Client",
+    "name": "tool.call",
+    "parent_span_id": "67a72f6223268a74",
+    "span_id": "fd2e1653cf6c2d50",
+    "start_time": 1795137187902786,
+    "status": "Unset",
+    "trace_id": "60252b629af2232b4c223b21e5f25311"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/verification.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(256)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"endpoint_test\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "route",
+        "value": "String(Owned(\"/health\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(1484998)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(44389)"
+      }
+    ],
+    "end_time": 1795137187930329,
+    "kind": "Internal",
+    "name": "tool.call",
+    "parent_span_id": "75db49852953e1cd",
+    "span_id": "99956282b849c658",
+    "start_time": 1795137187928809,
+    "status": "Unset",
+    "trace_id": "60252b629af2232b4c223b21e5f25311"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/verification.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(256)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"endpoint_test\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "route",
+        "value": "String(Owned(\"/todos\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(721026)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(27146)"
+      }
+    ],
+    "end_time": 1795137187931225,
+    "kind": "Internal",
+    "name": "tool.call",
+    "parent_span_id": "75db49852953e1cd",
+    "span_id": "cb981ae0695e8f9d",
+    "start_time": 1795137187930482,
+    "status": "Unset",
+    "trace_id": "60252b629af2232b4c223b21e5f25311"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/verification.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(161)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::verification\"))"
+      },
+      {
+        "key": "tool",
+        "value": "String(Owned(\"runtime_smoke\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(26935256)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(2101475)"
+      }
+    ],
+    "end_time": 1795137187931961,
+    "kind": "Internal",
+    "name": "tool.call",
+    "parent_span_id": "67a72f6223268a74",
+    "span_id": "75db49852953e1cd",
+    "start_time": 1795137187902926,
+    "status": "Unset",
+    "trace_id": "60252b629af2232b4c223b21e5f25311"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents/agent_backend.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(305)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents::agent_backend\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "state",
+        "value": "String(Owned(\"UnitTesting\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(27634993)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(176737174)"
+      }
+    ],
+    "end_time": 1795137187932154,
+    "kind": "Internal",
+    "name": "agent.state",
+    "parent_span_id": "4cee4f4f63afb2ca",
+    "span_id": "67a72f6223268a74",
+    "start_time": 1795137187727783,
+    "status": "Unset",
+    "trace_id": "60252b629af2232b4c223b21e5f25311"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/models/agents_manager/managing_agent.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::models::agents_manager::managing_agent\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(67)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::models::agents_manager::managing_agent\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Backend Developer\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(28249833)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(176699169)"
+      }
+    ],
+    "end_time": 1795137187932208,
+    "kind": "Internal",
+    "name": "agent.step",
+    "parent_span_id": "a1dfd252fb7a5b3e",
+    "span_id": "4cee4f4f63afb2ca",
+    "start_time": 1795137187727260,
+    "status": "Unset",
+    "trace_id": "60252b629af2232b4c223b21e5f25311"
+  },
+  {
+    "attributes": [
+      {
+        "key": "code.file.path",
+        "value": "String(Static(\"src/replay.rs\"))"
+      },
+      {
+        "key": "code.module.name",
+        "value": "String(Static(\"actix_autogpt::replay\"))"
+      },
+      {
+        "key": "code.line.number",
+        "value": "I64(103)"
+      },
+      {
+        "key": "thread.id",
+        "value": "I64(1)"
+      },
+      {
+        "key": "thread.name",
+        "value": "String(Owned(\"main\"))"
+      },
+      {
+        "key": "target",
+        "value": "String(Static(\"actix_autogpt::replay\"))"
+      },
+      {
+        "key": "agent",
+        "value": "String(Owned(\"Project Manager\"))"
+      },
+      {
+        "key": "spec_id",
+        "value": "String(Owned(\"todo-api\"))"
+      },
+      {
+        "key": "busy_ns",
+        "value": "I64(28653391)"
+      },
+      {
+        "key": "idle_ns",
+        "value": "I64(176669745)"
+      }
+    ],
+    "end_time": 1795137187932249,
+    "kind": "Internal",
+    "name": "agent.run",
+    "parent_span_id": "0000000000000000",
+    "span_id": "a1dfd252fb7a5b3e",
+    "start_time": 1795137187726929,
+    "status": "Unset",
+    "trace_id": "60252b629af2232b4c223b21e5f25311"
+  }
+]
