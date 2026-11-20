@@ -1,0 +1,33 @@
+{
+  "responses": {
+    "convert_user_input_to_goal": [
+      "build a website that tracks fitness progress"
+    ],
+    "print_project_scope": [
+      "{\"is_crud_required\": true, \"is_user_login_and_logout\": true, \"is_external_urls_required\": true}"
+    ],
+    "print_backend_webserver_code": [
+      {
+        "file": "code/fitness.rs"
+      }
+    ],
+    "print_improved_webserver_code": [
+      {
+        "file": "code/fitness.rs"
+      }
+    ],
+    "print_fixed_code": [
+      {
+        "file": "code/fitness.rs"
+      }
+    ],
+    "print_rest_api_endpoints": [
+      {
+        "file": "endpoints/fitness.json"
+      }
+    ],
+    "print_site_urls": [
+      "[\"https://example.com/timezone\"]"
+    ]
+  }
+}

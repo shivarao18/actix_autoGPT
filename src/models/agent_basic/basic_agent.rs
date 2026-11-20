@@ -10,6 +10,7 @@ pub enum AgentState {
 }
 
 #[derive(Debug)]
+#[allow(dead_code)] // objective and memory are part of the agent interface; tests read them.
 pub struct BasicAgent {
     pub objective: String,
     pub position: String,
@@ -45,5 +46,23 @@ impl BasicTraits for BasicAgent {
 
     fn get_memory(&self) -> &Vec<Message> {
         &self.memory
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn state_moves_from_discovery_to_finished() {
+        let mut agent = BasicAgent::new("ship the api".to_string(), "Project Manager".to_string());
+        assert_eq!(agent.get_state(), &AgentState::Discovery);
+        assert_eq!(agent.get_position(), "Project Manager");
+        assert_eq!(agent.get_objective(), "ship the api");
+        assert!(agent.get_memory().is_empty());
+        agent.update_state(AgentState::UnitTesting);
+        assert_eq!(agent.get_state(), &AgentState::UnitTesting);
+        agent.update_state(AgentState::Finished);
+        assert_eq!(*agent.get_state(), AgentState::Finished);
     }
 }

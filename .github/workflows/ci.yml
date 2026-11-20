@@ -1,0 +1,51 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  rust:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+      - uses: Swatinem/rust-cache@v2
+      - name: Format
+        run: cargo fmt --all -- --check
+      - name: Clippy
+        run: cargo clippy --all-targets -- -D warnings
+      - name: Test
+        run: cargo test --all-targets
+      - name: Verify the Actix template
+        run: cargo run --quiet -- verify --project web_template --route /health
+
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: eval/requirements.txt
+      - name: Install judge dependencies
+        run: python -m pip install -r eval/requirements.txt
+      - name: Offline DeepEval judge
+        env:
+          DEEPEVAL_TELEMETRY_OPT_OUT: "1"
+        run: python -m unittest eval.test_eval
+      - name: Live judge (skipped without an API key)
+        env:
+          EVAL_LIVE: "1"
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPEN_AI_KEY: ${{ secrets.OPEN_AI_KEY }}
+          DEEPEVAL_TELEMETRY_OPT_OUT: "1"
+        run: |
+          if [ -z "${OPENAI_API_KEY}${OPEN_AI_KEY}" ]; then
+            echo "No OpenAI key configured; live LLM evals skipped"
+            exit 0
+          fi
+          python -m eval.run_eval --live --trajectories docs/sample_trajectories.json --out /tmp/live_eval.md

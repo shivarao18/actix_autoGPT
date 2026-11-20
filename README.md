@@ -1,353 +1,197 @@
-# 🤖 Rust AutoGPT - Autonomous Code Generation System
+# actix_autogpt
 
-![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI-412991.svg?style=for-the-badge&logo=OpenAI&logoColor=white)
-![Actix](https://img.shields.io/badge/actix-web-blue?style=for-the-badge)
+A multi-agent system in Rust that turns a natural-language spec into an Actix-web service. A project manager turns the request into a goal, a solutions architect decides the scope and checks external URLs, and a backend developer writes the server, then the same verification path builds it, starts it, and calls its routes.
 
-An intelligent, autonomous Rust application that leverages OpenAI's GPT-4 API to automatically generate, architect, test, and deploy full-stack web applications from natural language descriptions.
+The original agent loop is intact. This repo adds the pieces that make a run measurable: automated verification, an evaluation report, OpenTelemetry traces, and a trajectory replay harness.
 
-## 🎯 Project Overview
-
-This project implements a sophisticated multi-agent system in Rust that can:
-- **Understand user requirements** through natural language processing
-- **Design system architecture** with automatic technology stack selection
-- **Generate production-ready backend code** using Actix-web framework
-- **Validate external API endpoints** with automated health checks
-- **Test and debug generated code** with automated build verification
-- **Deploy working applications** with minimal human intervention
-
-## 🏗️ Architecture
-
-### Multi-Agent System Design
-
-The system employs a hierarchical agent architecture inspired by software development teams:
-
-```
-┌─────────────────────────────────────────┐
-│         Managing Agent                  │
-│  (Project Manager - Orchestration)      │
-└────────────┬────────────────────────────┘
-             │
-             ├──────────────────┬─────────────────┐
-             ▼                  ▼                 ▼
-    ┌────────────────┐  ┌─────────────┐  ┌──────────────┐
-    │   Solution     │  │   Backend   │  │   Future     │
-    │   Architect    │  │  Developer  │  │   Agents     │
-    │                │  │             │  │   (TBD)      │
-    └────────────────┘  └─────────────┘  └──────────────┘
+```mermaid
+flowchart TD
+  spec["Natural-language spec"] --> manager["Managing agent"]
+  manager --> architect["Solutions architect"]
+  architect --> backend["Backend developer"]
+  backend --> verify["Verification"]
+  verify --> build["cargo build"]
+  verify --> smoke["Runtime smoke: process answers HTTP"]
+  verify --> endpoints["Endpoint checks: static GET routes"]
+  manager --> traj["Trajectory: one step per tool call"]
+  traj --> otel["OpenTelemetry spans"]
+  traj --> replay["Replay across model, prompt, and tool-schema versions"]
+  traj --> det["Deterministic scores in Rust"]
+  det --> judge["DeepEval judge via a LangChain chain"]
+  otel --> jaeger["OTLP HTTP collector or Jaeger"]
+  otel --> file["JSON trace file"]
 ```
 
-### Core Components
+## Layout
 
-#### 1. **Managing Agent** (`ManagingAgent`)
-- **Role**: Project Manager and Orchestrator
-- **Responsibilities**:
-  - Converts user input into structured project goals
-  - Coordinates specialist agents
-  - Maintains shared state via `FactSheet`
-  - Manages project lifecycle
+| Path | What it is |
+| --- | --- |
+| `src/models/agents_manager` | Managing agent. Turns the request into a goal and runs the other agents. |
+| `src/models/agents/agent_architect.rs` | Scope and external URL checks. |
+| `src/models/agents/agent_backend.rs` | Writes Actix-oriented server code and drives verification, including the compile-fix loop. |
+| `src/ai_functions` | Prompt contracts. `#[ai_function]` freezes each function, docs included, into the string sent to the model. |
+| `web_template` | Actix-web project the interactive agent reads and overwrites. |
+| `src/verification.rs` | Build check, runtime smoke test, and endpoint checks. |
+| `src/telemetry.rs` | OpenTelemetry export. |
+| `src/replay.rs`, `src/trajectory.rs`, `benchmarks/` | Recorded runs, the 8-spec benchmark, and the regression report. |
+| `src/scoring.rs` | Deterministic spec, tool-selection, and error-recovery scores. |
+| `eval/` | DeepEval metrics. LangChain builds the judge prompt. |
 
-#### 2. **Solution Architect Agent** (`AgentSolutionArchitect`)
-- **Role**: System Designer and API Validator
-- **Responsibilities**:
-  - Analyzes project requirements
-  - Determines feature requirements (CRUD, Auth, External APIs)
-  - Identifies and validates external API endpoints
-  - Performs health checks on third-party services
-  
-#### 3. **Backend Developer Agent** (`AgentBackendDeveloper`)
-- **Role**: Code Generator and Quality Assurance
-- **Responsibilities**:
-  - Generates Actix-web backend code
-  - Extracts REST API endpoints
-  - Builds and tests generated code
-  - Automatically fixes compilation errors (up to 3 attempts)
-  - Validates running endpoints
+## Quickstart
 
-### Data Flow
+Requirements: Rust stable (edition 2024, so 1.85 or newer) and a network connection the first time Cargo fetches crates.
 
-```rust
-User Input (Natural Language)
-    ↓
-Managing Agent: Convert to goal
-    ↓
-Solution Architect: Analyze requirements
-    ↓
-Solution Architect: Validate external APIs
-    ↓
-Backend Developer: Generate initial code
-    ↓
-Backend Developer: Improve code
-    ↓
-Backend Developer: Build & Test
-    ↓ (if errors)
-Backend Developer: Fix bugs (max 3 iterations)
-    ↓
-Backend Developer: Deploy & verify endpoints
-    ↓
-Working Application ✓
-```
-
-## 🚀 Key Features
-
-### Intelligent Code Generation
-- **GPT-4 powered**: Utilizes OpenAI's most advanced language model
-- **Context-aware**: Understands project requirements and constraints
-- **Template-based**: Uses code templates for consistent output
-- **Iterative improvement**: Refines code quality through multiple passes
-
-### Automated Testing & Validation
-- **Build verification**: Automatically compiles generated code
-- **Runtime testing**: Spawns test servers and validates endpoints
-- **API health checks**: Tests external dependencies
-- **Self-healing**: Attempts to fix compilation errors automatically
-
-### Type-Safe Design
-- **Serde integration**: Robust JSON serialization/deserialization
-- **Strong typing**: Leverages Rust's type system for reliability
-- **Custom data models**: `RouteObject`, `ProjectScope`, `FactSheet`
-- **Error handling**: Comprehensive `Result` types
-
-### Async/Await Architecture
-- **Tokio runtime**: High-performance async execution
-- **Non-blocking I/O**: Efficient API calls and network operations
-- **Concurrent operations**: Parallel agent execution where possible
-
-## 📦 Project Structure
-
-```
-actix_AUTOGPT/
-├── src/
-│   ├── main.rs                 # Entry point, orchestration
-│   ├── ai_functions/           # AI function definitions
-│   │   ├── aifunc_managing.rs  # Managing agent AI functions
-│   │   ├── aifunc_architect.rs # Architect agent AI functions
-│   │   └── aifunc_backend.rs   # Backend agent AI functions
-│   ├── apis/                   # External API integrations
-│   │   └── call_request.rs     # OpenAI API client
-│   ├── helpers/                # Utility functions
-│   │   ├── command_line.rs     # CLI interactions
-│   │   └── general.rs          # Common helpers
-│   └── models/                 # Data structures & agents
-│       ├── agent_basic/        # Base agent traits
-│       ├── agents/             # Specialist agent implementations
-│       │   ├── agent_architect.rs
-│       │   ├── agent_backend.rs
-│       │   └── agent_traits.rs
-│       ├── agents_manager/     # Managing agent
-│       │   └── managing_agent.rs
-│       └── general/            # Shared models
-│           └── llm.rs          # LLM data structures
-└── schemas/
-    └── api_schema.json         # Generated API schemas
-```
-
-## 🛠️ Technical Stack
-
-- **Language**: Rust (Edition 2024)
-- **Async Runtime**: Tokio
-- **HTTP Client**: Reqwest
-- **Serialization**: Serde (JSON)
-- **AI Model**: OpenAI GPT-4
-- **Web Framework**: Actix-web (for generated code)
-- **Traits**: Async-trait for polymorphic agents
-
-## ⚙️ Setup & Installation
-
-### Prerequisites
-- Rust (1.70+)
-- OpenAI API Key
-- OpenAI Organization ID
-
-### Configuration
-
-1. **Clone the repository**:
 ```bash
-git clone <repository-url>
-cd actix_AUTOGPT
+cargo test
+cargo run -- verify --project web_template --route /health
 ```
 
-2. **Set up environment variables**:
-Create a `.env` file in the project root:
-```env
-OPEN_AI_KEY=your_openai_api_key_here
-OPEN_AI_ORG=your_openai_org_id_here
-```
+The second command compiles the Actix template, starts it on a free port, and checks `GET /health`.
 
-3. **Update file paths** (in `src/helpers/general.rs`):
-```rust
-// Update these paths to match your system
-const CODE_TEMPLATE_PATH: &str = "/path/to/your/web_template/src/code_template.rs";
-pub const WEB_SERVER_PROJECT_PATH: &str = "/path/to/your/web_template/";
-const EXEC_MAIN_PATH: &str = "/path/to/your/web_template/src/main.rs";
-```
+Interactive generation calls OpenAI. Copy `.env.example` to `.env` and set a key. `OPEN_AI_KEY` and `OPENAI_API_KEY` are both accepted. `OPEN_AI_ORG` is optional.
 
-4. **Build the project**:
-```bash
-cargo build --release
-```
-
-## 🎮 Usage
-
-### Basic Usage
-
-Run the application:
 ```bash
 cargo run
 ```
 
-When prompted, describe the website you want to build:
-```
-What website are we building today?
-> I need a REST API that tracks weather data with temperature and descriptions
-```
+`AUTO_CONFIRM=1` skips the prompt that asks you to approve running generated code. Without a key, use replay and the judge instead of `cargo run`.
 
-The system will:
-1. ✅ Analyze your requirements
-2. ✅ Design the architecture
-3. ✅ Generate Actix-web backend code
-4. ✅ Test and validate the code
-5. ✅ Deploy a working server
+## Environment
 
-### Example Inputs
+| Variable | Default | Role |
+| --- | --- | --- |
+| `OPEN_AI_KEY` or `OPENAI_API_KEY` | unset | Live model calls. Replay and CI do not need it. |
+| `OPEN_AI_ORG` | unset | Optional OpenAI organization header. |
+| `OPENAI_MODEL` | `gpt-4` | Model name sent to the API and recorded on the trajectory. |
+| `PROMPT_VERSION` | `v1` | `v1` is the original function-printer instruction. `v2` is a stricter one. |
+| `TOOL_SCHEMA_VERSION` | `v1` | `v2` appends the route-schema rules to the prompt. |
+| `WEB_SERVER_PROJECT_PATH` | `web_template` | Actix project the backend agent edits. |
+| `AUTO_CONFIRM` | off | Skip the manual code-approval prompt. |
+| `SKIP_NETWORK_CHECKS` | off | Treat external URL checks as HTTP 200. |
+| `SMOKE_TIMEOUT_SECS` | `15` | How long to wait for `GET /health`. |
+| `OTEL_TRACES_FILE` | unset | Write spans to this JSON file on shutdown. |
+| `OTEL_EXPORTER_OTLP_ENDPOINT` | unset | Also export OTLP/HTTP, for example `http://localhost:4318`. |
+| `RUST_LOG` | `info` | Span filter. `info` keeps the agent and tool spans. |
+| `EVAL_LIVE` | off | Python judge calls ChatOpenAI instead of the offline rubric. |
 
-**E-commerce API**:
-```
-Build a website that manages products with CRUD operations and integrates with payment APIs
-```
+## Verification
 
-**Fitness Tracker**:
-```
-Need a full stack app that fetches and tracks my fitness progress with timezone information
-```
+`src/verification.rs` is what the backend agent calls after it writes `src/main.rs`.
 
-**Crypto Dashboard**:
-```
-Create a website that fetches and stores crypto price data from Binance
-```
+1. **Build check.** `cargo build` in the project. Compiler output is kept for the fix loop and for failure signatures such as `E0308`.
+2. **Runtime smoke test.** The built binary is spawned with `PORT` set. Smoke passes when `GET /health` returns any HTTP response before the timeout.
+3. **Endpoint checks.** Static `get` routes from the extracted schema are called. A route passes when the status is 200.
 
-## 🧪 Testing
+The generated server is expected to read `PORT` (default `8080`) and serve `GET /health`. The Actix template does both. Up to three failed builds go back through `print_fixed_code`; a later successful build is recorded as a recovered error.
 
-Run the test suite:
 ```bash
+cargo run -- verify --project web_template --route /health
+```
+
+## Evaluation
+
+Two layers score the same three axes: spec compliance, tool selection, and error recovery.
+
+The Rust layer is deterministic and does not call a model. Spec compliance checks the goal text, the three scope flags, and whether expected routes showed up in the schema. Tool selection is recall of the expected tool list, with a penalty when the architect takes an external-URL branch the spec did not ask for. Error recovery is 1 when a failed `cargo build` is followed by a successful one, or when the build never failed, and 0 when every build failed.
+
+The Python layer is a DeepEval metric per axis. LangChain's `ChatPromptTemplate` builds the judge prompt, and the chain is either:
+
+* an offline rubric model, used in CI and in the checked-in sample, or
+* `ChatOpenAI` when `EVAL_LIVE=1` and an API key is set.
+
+```bash
+python -m pip install -r eval/requirements.txt
+python -m eval.run_eval \
+  --trajectories docs/sample_trajectories.json \
+  --out docs/sample_eval_report.md \
+  --json docs/sample_eval_report.json
+```
+
+Live judging is the same command with `--live`. GitHub Actions runs the offline tests on every push and runs the live judge only when `OPENAI_API_KEY` or `OPEN_AI_KEY` is configured as a repository secret. `cargo test` ignores the OpenAI integration tests; run those with `cargo test -- --ignored` after exporting a key.
+
+From a sample of the offline report:
+
+| Spec | Version | Outcome | Spec det / judge | Tools det / judge | Recovery det / judge |
+| --- | --- | --- | --- | --- | --- |
+| todo-api | gpt-4 / v1 / v1 | success | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 / 1.00 |
+| todo-api | gpt-4o / v1 / v1 | failure | 0.83 / 0.83 | 0.50 / 0.50 | 1.00 / 1.00 |
+| weather-api | gpt-4 / v1 / v2 | failure | 1.00 / 1.00 | 0.63 / 0.63 | 0.00 / 0.00 |
+| bookmarks-api | gpt-4 / v1 / v1 | success | 1.00 / 1.00 | 1.00 / 1.00 | 1.00 / 1.00 |
+
+The full table, including the judge's sentences, is `docs/sample_eval_report.md`.
+
+## Replay
+
+Replay re-runs the eight benchmark specs through the real manager, architect, and backend, four versions each: model `gpt-4` and `gpt-4o`, prompt `v1` and `v2`, tool schema `v1` and `v2`. A fixture model answers from `benchmarks/fixtures`. The baseline is `gpt-4 / prompt v1 / schema v1`. Other cells are diffed against it, and failures that share a mode and a signature are clustered.
+
+```bash
+cargo run -- replay \
+  --out docs/sample_replay_report.md \
+  --trajectories docs/sample_trajectories.json
+```
+
+The checked-in run is 32 trajectories, 10 failures, 5 clusters. The clusters are compiler error `E0308` after the fix loop gave up, `GET /weather` returning 500, a login flag drifting off the spec, an external-URL branch the spec did not ask for, and route schemas that used `GET` instead of `get` so the endpoint probe skipped them. `bookmarks-api` on the baseline fails its first build and recovers. See `docs/sample_replay_report.md`.
+
+Benchmark servers under `benchmarks/code` are tiny standard-library HTTP binaries so the suite does not download crates. The interactive agent and `verify --project web_template` still build the Actix template. Both paths call `verification::build_project` and `verification::probe`.
+
+## Traces
+
+Each run opens an `agent.run` span. Each specialist is an `agent.step`, each state in the loop is an `agent.state`, and each model call, build, smoke check, and endpoint check is a `tool.call`.
+
+Write them to a file with no collector:
+
+```bash
+cargo run -- trace-demo --out docs/sample_trace.json
+```
+
+`docs/sample_trace.json` is that file for the todo-api benchmark. A tool span looks like this, with the file and line attributes shortened:
+
+```json
+{
+  "name": "tool.call",
+  "trace_id": "…",
+  "span_id": "…",
+  "parent_span_id": "…",
+  "attributes": [
+    {"key": "agent", "value": "String(Owned(\"Backend Developer\"))"},
+    {"key": "tool", "value": "String(Owned(\"cargo_build\"))"}
+  ],
+  "status": "Unset"
+}
+```
+
+The same process exports OTLP/HTTP when `OTEL_EXPORTER_OTLP_ENDPOINT` is set. Jaeger all-in-one listens on port 4318:
+
+```bash
+docker compose -f deploy/jaeger-compose.yaml up
+OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4318 cargo run -- trace-demo --out /tmp/trace.json
+```
+
+The UI is at `http://localhost:16686`. Search for the service name `actix_autogpt`.
+
+## Design decisions
+
+The agent control flow is still the state machine from the original project: discovery, working, unit testing, finished. New behavior hangs off that loop instead of replacing it.
+
+* **One verifier.** The backend agent's build-and-probe block now calls `verification`. Replay and `verify` call those same functions, so a benchmark failure and an interactive failure are the same kind of evidence.
+* **Task-local run config.** Model, prompt version, tool schema, the fixture client, and the trajectory recorder sit in Tokio task-locals. Agent method signatures stay the ones the manager already calls.
+* **Prompt versions are real prompt text.** `v1` is the original "function printer" instruction. `v2` replaces that wording. Tool schema `v2` appends the route-schema rules. The model name is the third axis and selects both the API body and the fixture directory.
+* **Tool selection is the branch the model causes.** The state machine picks the function. The model decides the branch: external URLs or not, and whether a broken build is repaired. The score compares that trace with the tools the spec required.
+* **The judge is Python because DeepEval and LangChain are Python.** Rust owns the trajectory JSON. The offline judge applies the published rubric so CI does not need a key. `EVAL_LIVE=1` swaps in ChatOpenAI without changing the metric.
+* **Replay fixtures are hermetic.** They return complete `main.rs` files and a route schema. That makes the 32-run matrix deterministic. The Actix template remains the interactive target and is what CI's verify step builds and probes.
+* **Traces are optional.** With no endpoint and no `OTEL_TRACES_FILE`, the process only installs a formatting subscriber. Setting either variable adds an exporter. The file exporter needs no collector.
+
+## Tests and CI
+
+```bash
+cargo fmt --all -- --check
+cargo clippy --all-targets -- -D warnings
 cargo test
+python -m unittest eval.test_eval
 ```
 
-### Available Tests
-- `tests_call_to_openai`: Validates OpenAI API integration
-- `tests_managing_agent`: Tests end-to-end agent orchestration
-- `tests_solution_architect`: Validates architecture agent
-- `tests_backend_developer`: Tests code generation and deployment
+`.github/workflows/ci.yml` runs the Rust checks, verifies the Actix template, and runs the offline judge. Live model tests are `#[ignore]`d. The live judge step exits 0 when the OpenAI secret is absent.
 
-## 🔑 Key Design Patterns
+## Background
 
-### 1. **Trait-Based Polymorphism**
-```rust
-#[async_trait]
-pub trait SpecialFunctions: Debug {
-    fn get_attributes_from_agent(&self) -> &BasicAgent;
-    async fn execute(&mut self, factsheet: &mut FactSheet) -> Result<(), Box<dyn std::error::Error>>;
-}
-```
-
-### 2. **State Machine Pattern**
-```rust
-pub enum AgentState {
-    Discovery,
-    Working,
-    UnitTesting,
-    Finished,
-}
-```
-
-### 3. **Shared State via FactSheet**
-```rust
-pub struct FactSheet {
-    pub project_description: String,
-    pub project_scope: Option<ProjectScope>,
-    pub external_urls: Option<Vec<String>>,
-    pub backend_code: Option<String>,
-    pub api_endpoint_schema: Option<Vec<RouteObject>>,
-}
-```
-
-### 4. **Procedural Macros for AI Functions**
-```rust
-#[ai_function]
-pub fn convert_user_input_to_goal(_user_request: &str) {
-    /// Input: Takes in a user request
-    /// Function: Converts user request into a short summarized goal
-    /// Output: Prints goal
-    println!(OUTPUT)
-}
-```
-
-## 🎓 Learning Outcomes
-
-This project demonstrates proficiency in:
-- ✅ **Advanced Rust**: Traits, async/await, lifetimes, error handling
-- ✅ **AI Integration**: OpenAI API, prompt engineering, LLM orchestration
-- ✅ **System Design**: Multi-agent architectures, state management
-- ✅ **API Development**: REST APIs, HTTP clients, endpoint testing
-- ✅ **Automation**: Build systems, testing, self-healing code
-- ✅ **Type Safety**: Serde, custom types, validated data structures
-
-## 🚧 Future Enhancements
-
-### Planned Features
-- [ ] Frontend generation (React/Vue/Svelte)
-- [ ] Database schema generation and migration
-- [ ] Docker containerization
-- [ ] CI/CD pipeline integration
-- [ ] Support for multiple LLM providers (Anthropic, Gemini)
-- [ ] Incremental code updates instead of full regeneration
-- [ ] Advanced error recovery with LLM-based debugging
-- [ ] Performance metrics and cost tracking
-- [ ] Plugin system for custom agents
-
-### Potential Improvements
-- [ ] Add structured logging with `tracing`
-- [ ] Implement retry logic with exponential backoff
-- [ ] Add configuration management (config files)
-- [ ] Create custom error types
-- [ ] Add performance benchmarks
-- [ ] Implement caching for API responses
-- [ ] Add telemetry and observability
-
-## 📊 Performance Characteristics
-
-- **Average project generation time**: 2-5 minutes
-- **OpenAI API calls per project**: ~5-10 calls
-- **Success rate**: ~85% (depends on complexity)
-- **Max bug fix iterations**: 3 attempts
-- **Endpoint validation timeout**: 5 seconds
-
-## 🔒 Safety Features
-
-1. **User confirmation**: Requires manual approval before running generated code
-2. **Timeout protection**: Network requests have timeouts
-3. **Iteration limits**: Prevents infinite loops in bug fixing
-4. **Graceful error handling**: Fails safely on critical errors
-
-## 📝 License
-
-[Specify your license here]
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 👨‍💻 Author
-
-Built as part of the Udemy course: *"Learn Rust Whilst Taking ChatGPT to the Extreme In Creating an Automated GPT that Builds and Tests Code for You"*
-
-## 🙏 Acknowledgments
-
-- OpenAI for GPT-4 API
-- Rust community for excellent async ecosystem
-- Actix-web team for the web framework
-
----
-
-**Note**: This is an educational project demonstrating AI-powered code generation. Always review and test generated code before deploying to production.
-
+The agent structure follows the Udemy course *Learn Rust Whilst Taking ChatGPT to the Extreme In Creating an Automated GPT that Builds and Tests Code for You*. Paths are environment variables now, with `web_template` as the default, instead of a machine-specific directory.

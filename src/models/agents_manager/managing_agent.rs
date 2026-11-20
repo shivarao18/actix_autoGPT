@@ -1,10 +1,10 @@
-use crate::models::agent_basic::basic_agent::{AgentState, BasicAgent};
-use crate::models::agents::agent_traits::{FactSheet, SpecialFunctions};
-
 use crate::ai_functions::aifunc_managing::convert_user_input_to_goal;
 use crate::helpers::general::ai_task_request;
+use crate::models::agent_basic::basic_agent::{AgentState, BasicAgent};
 use crate::models::agents::agent_architect::AgentSolutionArchitect;
 use crate::models::agents::agent_backend::AgentBackendDeveloper;
+use crate::models::agents::agent_traits::{AgentError, FactSheet, SpecialFunctions};
+use tracing::Instrument;
 
 #[derive(Debug)]
 pub struct ManagingAgent {
@@ -14,10 +14,9 @@ pub struct ManagingAgent {
 }
 
 impl ManagingAgent {
-    pub async fn new(usr_req: String) -> Result<Self, Box<dyn std::error::Error>> {
-        let position: String = "Project Manager".to_string();
-
-        let attributes: BasicAgent = BasicAgent {
+    pub async fn new(usr_req: String) -> Result<Self, AgentError> {
+        let position = "Project Manager".to_string();
+        let attributes = BasicAgent {
             objective: "Manage agents who are building an excellent website for the user"
                 .to_string(),
             position: position.clone(),
@@ -25,17 +24,15 @@ impl ManagingAgent {
             memory: vec![],
         };
 
-        let project_description: String = ai_task_request(
+        let project_description = ai_task_request(
             usr_req,
             &position,
             get_function_string!(convert_user_input_to_goal),
             convert_user_input_to_goal,
         )
-        .await;
+        .await?;
 
-        let agents: Vec<Box<dyn SpecialFunctions>> = vec![];
-
-        let factsheet: FactSheet = FactSheet {
+        let factsheet = FactSheet {
             project_description,
             project_scope: None,
             external_urls: None,
@@ -46,8 +43,12 @@ impl ManagingAgent {
         Ok(Self {
             _attributes: attributes,
             factsheet,
-            agents,
+            agents: Vec::new(),
         })
+    }
+
+    pub fn factsheet(&self) -> &FactSheet {
+        &self.factsheet
     }
 
     fn add_agent(&mut self, agent: Box<dyn SpecialFunctions>) {
@@ -59,16 +60,14 @@ impl ManagingAgent {
         self.add_agent(Box::new(AgentBackendDeveloper::new()));
     }
 
-    pub async fn execute_project(&mut self) {
+    pub async fn execute_project(&mut self) -> Result<(), AgentError> {
         self.create_agents();
-
         for agent in &mut self.agents {
-            let _agent_res: Result<(), Box<dyn std::error::Error>> =
-                agent.execute(&mut self.factsheet).await;
-
-            // let agent_info: &BasicAgent = agent.get_attributes_from_agent();
-            // dbg!(agent_info);
+            let name = agent.get_attributes_from_agent().position.clone();
+            let span = tracing::info_span!("agent.step", agent = %name);
+            agent.execute(&mut self.factsheet).instrument(span).await?;
         }
+        Ok(())
     }
 }
 
@@ -77,15 +76,13 @@ mod tests {
     use super::*;
 
     #[tokio::test]
+    #[ignore = "calls OpenAI and builds generated code; set OPEN_AI_KEY and run with --ignored"]
     async fn tests_managing_agent() {
-        let usr_request: &str = "need a full stack app that fetches and tracks my fitness progress. Needs to include timezone info from the web.";
-
-        let mut managing_agent: ManagingAgent = ManagingAgent::new(usr_request.to_string())
+        let usr_request = "need a full stack app that fetches and tracks my fitness progress. Needs to include timezone info from the web.";
+        let mut managing_agent = ManagingAgent::new(usr_request.to_string())
             .await
             .expect("Error creating Managing Agent");
-
-        managing_agent.execute_project().await;
-
-        dbg!(managing_agent.factsheet);
+        managing_agent.execute_project().await.expect("project");
+        assert!(!managing_agent.factsheet().project_description.is_empty());
     }
 }

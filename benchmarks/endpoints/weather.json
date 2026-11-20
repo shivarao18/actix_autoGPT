@@ -1,0 +1,21 @@
+[
+  {
+    "route": "/health",
+    "is_route_dynamic": "false",
+    "method": "get",
+    "request_body": "None",
+    "response": {
+      "status": "string"
+    }
+  },
+  {
+    "route": "/weather",
+    "is_route_dynamic": "false",
+    "method": "get",
+    "request_body": "None",
+    "response": {
+      "date": "string",
+      "temperature": "number"
+    }
+  }
+]

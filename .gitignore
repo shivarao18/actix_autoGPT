@@ -1,4 +1,8 @@
-/target
+target/
+__pycache__/
+*.pyc
+**/.env
+!.env.example
 
 IMPROVEMENTS.md
 PROJECT_SUMMARY.md

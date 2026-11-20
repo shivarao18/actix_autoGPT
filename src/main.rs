@@ -1,28 +1,41 @@
 #[macro_export]
 macro_rules! get_function_string {
-    ($func: ident) => {{
-        stringify!($func)
-    }};
+    ($func: ident) => {{ stringify!($func) }};
 }
 
 #[macro_use]
 mod ai_functions;
 mod apis;
+mod cli;
 mod helpers;
+mod llm;
 mod models;
+mod replay;
+mod run_context;
+mod scoring;
+mod telemetry;
+mod trajectory;
+mod verification;
 
-use helpers::command_line::get_user_response;
-use models::agents_manager::managing_agent::ManagingAgent;
+use dotenv::dotenv;
 
 #[tokio::main]
 async fn main() {
-    let usr_req: String = get_user_response("What website are we building today?");
+    let code = async_main().await;
+    std::process::exit(code);
+}
 
-    let mut manage_agent: ManagingAgent = ManagingAgent::new(usr_req)
-        .await
-        .expect("Error creating agent");
-
-    manage_agent.execute_project().await;
-
-    // dbg!(manage_agent);
+async fn async_main() -> i32 {
+    dotenv().ok();
+    let args: Vec<String> = std::env::args().skip(1).collect();
+    let guard = telemetry::init_from_env(cli::traces_file_override(&args));
+    let code = match cli::dispatch(&args).await {
+        Ok(code) => code,
+        Err(err) => {
+            eprintln!("error: {err}");
+            1
+        }
+    };
+    drop(guard);
+    code
 }

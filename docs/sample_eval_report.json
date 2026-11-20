@@ -1,0 +1,1122 @@
+[
+  {
+    "spec_id": "todo-api",
+    "model": "gpt-4",
+    "prompt_version": "v1",
+    "tool_schema_version": "v1",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "todo-api: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "todo-api: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "todo-api: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "todo-api",
+    "model": "gpt-4o",
+    "prompt_version": "v1",
+    "tool_schema_version": "v1",
+    "outcome": "failure",
+    "failure_modes": [
+      "spec_mismatch",
+      "tool_selection_error"
+    ],
+    "deterministic": {
+      "spec_compliance": 0.83,
+      "tool_selection": 0.5,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": [
+        "spec field is_external_urls_required did not match"
+      ]
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 0.83,
+        "reason": "todo-api: spec drift at is_external_urls_required was True",
+        "success": false
+      },
+      "tool_selection": {
+        "score": 0.5,
+        "reason": "todo-api: unexpected planning tools check_status_code, print_site_urls",
+        "success": false
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "todo-api: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "todo-api",
+    "model": "gpt-4",
+    "prompt_version": "v2",
+    "tool_schema_version": "v1",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "todo-api: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "todo-api: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "todo-api: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "todo-api",
+    "model": "gpt-4",
+    "prompt_version": "v1",
+    "tool_schema_version": "v2",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "todo-api: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "todo-api: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "todo-api: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "weather-api",
+    "model": "gpt-4",
+    "prompt_version": "v1",
+    "tool_schema_version": "v1",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "weather-api: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "weather-api: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "weather-api: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "weather-api",
+    "model": "gpt-4o",
+    "prompt_version": "v1",
+    "tool_schema_version": "v1",
+    "outcome": "failure",
+    "failure_modes": [
+      "endpoint_failed"
+    ],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": false,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "weather-api: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "weather-api: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "weather-api: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "weather-api",
+    "model": "gpt-4",
+    "prompt_version": "v2",
+    "tool_schema_version": "v1",
+    "outcome": "failure",
+    "failure_modes": [
+      "endpoint_failed"
+    ],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": false,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "weather-api: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "weather-api: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "weather-api: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "weather-api",
+    "model": "gpt-4",
+    "prompt_version": "v1",
+    "tool_schema_version": "v2",
+    "outcome": "failure",
+    "failure_modes": [
+      "build_failed",
+      "error_recovery_failed"
+    ],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 0.63,
+      "error_recovery": 0.0,
+      "build_passed": false,
+      "smoke_passed": false,
+      "endpoints_passed": false,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "weather-api: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 0.63,
+        "reason": "weather-api: missing tools print_rest_api_endpoints, runtime_smoke, endpoint_test",
+        "success": false
+      },
+      "error_recovery": {
+        "score": 0.0,
+        "reason": "weather-api: every cargo_build failed; print_fixed_code did not recover",
+        "success": false
+      }
+    }
+  },
+  {
+    "spec_id": "notes-api",
+    "model": "gpt-4",
+    "prompt_version": "v1",
+    "tool_schema_version": "v1",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "notes-api: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "notes-api: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "notes-api: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "notes-api",
+    "model": "gpt-4o",
+    "prompt_version": "v1",
+    "tool_schema_version": "v1",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "notes-api: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "notes-api: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "notes-api: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "notes-api",
+    "model": "gpt-4",
+    "prompt_version": "v2",
+    "tool_schema_version": "v1",
+    "outcome": "failure",
+    "failure_modes": [
+      "spec_mismatch"
+    ],
+    "deterministic": {
+      "spec_compliance": 0.83,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": [
+        "spec field is_user_login_and_logout did not match"
+      ]
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 0.83,
+        "reason": "notes-api: spec drift at is_user_login_and_logout was False",
+        "success": false
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "notes-api: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "notes-api: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "notes-api",
+    "model": "gpt-4",
+    "prompt_version": "v1",
+    "tool_schema_version": "v2",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "notes-api: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "notes-api: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "notes-api: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "forex-prices",
+    "model": "gpt-4",
+    "prompt_version": "v1",
+    "tool_schema_version": "v1",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "forex-prices: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "forex-prices: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "forex-prices: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "forex-prices",
+    "model": "gpt-4o",
+    "prompt_version": "v1",
+    "tool_schema_version": "v1",
+    "outcome": "failure",
+    "failure_modes": [
+      "spec_mismatch",
+      "tool_selection_error"
+    ],
+    "deterministic": {
+      "spec_compliance": 0.83,
+      "tool_selection": 0.8,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": [
+        "spec field is_external_urls_required did not match"
+      ]
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 0.83,
+        "reason": "forex-prices: spec drift at is_external_urls_required was False",
+        "success": false
+      },
+      "tool_selection": {
+        "score": 0.8,
+        "reason": "forex-prices: missing tools print_site_urls, check_status_code",
+        "success": false
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "forex-prices: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "forex-prices",
+    "model": "gpt-4",
+    "prompt_version": "v2",
+    "tool_schema_version": "v1",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "forex-prices: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "forex-prices: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "forex-prices: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "forex-prices",
+    "model": "gpt-4",
+    "prompt_version": "v1",
+    "tool_schema_version": "v2",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "forex-prices: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "forex-prices: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "forex-prices: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "fitness-tracker",
+    "model": "gpt-4",
+    "prompt_version": "v1",
+    "tool_schema_version": "v1",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "fitness-tracker: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "fitness-tracker: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "fitness-tracker: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "fitness-tracker",
+    "model": "gpt-4o",
+    "prompt_version": "v1",
+    "tool_schema_version": "v1",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "fitness-tracker: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "fitness-tracker: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "fitness-tracker: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "fitness-tracker",
+    "model": "gpt-4",
+    "prompt_version": "v2",
+    "tool_schema_version": "v1",
+    "outcome": "failure",
+    "failure_modes": [
+      "spec_mismatch"
+    ],
+    "deterministic": {
+      "spec_compliance": 0.83,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": [
+        "spec field is_user_login_and_logout did not match"
+      ]
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 0.83,
+        "reason": "fitness-tracker: spec drift at is_user_login_and_logout was False",
+        "success": false
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "fitness-tracker: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "fitness-tracker: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "fitness-tracker",
+    "model": "gpt-4",
+    "prompt_version": "v1",
+    "tool_schema_version": "v2",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "fitness-tracker: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "fitness-tracker: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "fitness-tracker: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "health-dashboard",
+    "model": "gpt-4",
+    "prompt_version": "v1",
+    "tool_schema_version": "v1",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "health-dashboard: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "health-dashboard: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "health-dashboard: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "health-dashboard",
+    "model": "gpt-4o",
+    "prompt_version": "v1",
+    "tool_schema_version": "v1",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "health-dashboard: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "health-dashboard: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "health-dashboard: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "health-dashboard",
+    "model": "gpt-4",
+    "prompt_version": "v2",
+    "tool_schema_version": "v1",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "health-dashboard: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "health-dashboard: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "health-dashboard: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "health-dashboard",
+    "model": "gpt-4",
+    "prompt_version": "v1",
+    "tool_schema_version": "v2",
+    "outcome": "failure",
+    "failure_modes": [
+      "build_failed",
+      "error_recovery_failed"
+    ],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 0.63,
+      "error_recovery": 0.0,
+      "build_passed": false,
+      "smoke_passed": false,
+      "endpoints_passed": false,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "health-dashboard: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 0.63,
+        "reason": "health-dashboard: missing tools print_rest_api_endpoints, runtime_smoke, endpoint_test",
+        "success": false
+      },
+      "error_recovery": {
+        "score": 0.0,
+        "reason": "health-dashboard: every cargo_build failed; print_fixed_code did not recover",
+        "success": false
+      }
+    }
+  },
+  {
+    "spec_id": "inventory-api",
+    "model": "gpt-4",
+    "prompt_version": "v1",
+    "tool_schema_version": "v1",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "inventory-api: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "inventory-api: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "inventory-api: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "inventory-api",
+    "model": "gpt-4o",
+    "prompt_version": "v1",
+    "tool_schema_version": "v1",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "inventory-api: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "inventory-api: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "inventory-api: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "inventory-api",
+    "model": "gpt-4",
+    "prompt_version": "v2",
+    "tool_schema_version": "v1",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "inventory-api: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "inventory-api: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "inventory-api: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "inventory-api",
+    "model": "gpt-4",
+    "prompt_version": "v1",
+    "tool_schema_version": "v2",
+    "outcome": "failure",
+    "failure_modes": [
+      "tool_schema_mismatch"
+    ],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 0.88,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": false,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "inventory-api: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 0.88,
+        "reason": "inventory-api: missing tools endpoint_test",
+        "success": false
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "inventory-api: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "bookmarks-api",
+    "model": "gpt-4",
+    "prompt_version": "v1",
+    "tool_schema_version": "v1",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "bookmarks-api: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "bookmarks-api: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "bookmarks-api: cargo_build failed and a later print_fixed_code build succeeded",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "bookmarks-api",
+    "model": "gpt-4o",
+    "prompt_version": "v1",
+    "tool_schema_version": "v1",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "bookmarks-api: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "bookmarks-api: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "bookmarks-api: cargo_build failed and a later print_fixed_code build succeeded",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "bookmarks-api",
+    "model": "gpt-4",
+    "prompt_version": "v2",
+    "tool_schema_version": "v1",
+    "outcome": "success",
+    "failure_modes": [],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 1.0,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": true,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "bookmarks-api: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 1.0,
+        "reason": "bookmarks-api: tool trace matches the expected branch, including every multi-step call",
+        "success": true
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "bookmarks-api: cargo_build failed and a later print_fixed_code build succeeded",
+        "success": true
+      }
+    }
+  },
+  {
+    "spec_id": "bookmarks-api",
+    "model": "gpt-4",
+    "prompt_version": "v1",
+    "tool_schema_version": "v2",
+    "outcome": "failure",
+    "failure_modes": [
+      "tool_schema_mismatch"
+    ],
+    "deterministic": {
+      "spec_compliance": 1.0,
+      "tool_selection": 0.78,
+      "error_recovery": 1.0,
+      "build_passed": true,
+      "smoke_passed": true,
+      "endpoints_passed": false,
+      "notes": []
+    },
+    "judge": {
+      "spec_compliance": {
+        "score": 1.0,
+        "reason": "bookmarks-api: scope, goal, and routes match the spec across the run",
+        "success": true
+      },
+      "tool_selection": {
+        "score": 0.78,
+        "reason": "bookmarks-api: missing tools print_fixed_code, endpoint_test",
+        "success": false
+      },
+      "error_recovery": {
+        "score": 1.0,
+        "reason": "bookmarks-api: cargo_build succeeded on the first attempt",
+        "success": true
+      }
+    }
+  }
+]
